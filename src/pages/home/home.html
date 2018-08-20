@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar color="sweet">
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="content" no-lines padding>
+  <ion-list no-lines>
+    <ion-list-header>
+      CodeTribe Curriculm
+    </ion-list-header>
+  </ion-list>
+
+  <button ion-item *ngFor="let course of arrCourses" (click)="getImages(course)">
+<ion-icon name="{{course.icon}}" item-left></ion-icon>
+<h2>{{course.title}}</h2>
+<h3>Duration:{{course.weeks}}weeks</h3>
+
+<div *ngFor="let lesson of course.lessons"> 
+    <p>title: {{lesson.title}}
+    <p>number: {{lesson.number}}</p> 
+   <p>description: {{lesson.description}}</p>   
+</div>
+  </button>
+  
+</ion-content>
